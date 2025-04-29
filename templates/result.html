@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head><title>Result</title></head>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <h2>Predicted Vehicle Price</h2>
-    <p><strong>Estimated Price:</strong> ${{ prediction }}</p>
-    <a href="/">← Go back</a>
+    <div class="overlay">
+        <div class="result-box">
+            <h2>Predicted Vehicle Price</h2>
+            <div class="price">${{ prediction }}</div>
+            <a href="/" class="btn btn-outline-dark">← Predict Another</a>
+        </div>
+    </div>
 </body>
 </html>
