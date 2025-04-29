@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head><title>Car Price Predictor</title></head>
+<body>
+    <h2>Predict Vehicle Price</h2>
+    <form method="POST" action="/predict">
+        <label>Make:</label>
+        <select id="make" name="make">
+            {% for make in makes %}
+            <option value="{{ make }}">{{ make }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Model:</label>
+        <select id="model" name="model"></select><br><br>
+
+        <label>Trim:</label>
+        <select id="trim" name="trim"></select><br><br>
+
+        <label>Mileage:</label>
+        <input type="number" name="mileage" required><br><br>
+
+        <label>Vehicle Age:</label>
+        <input type="number" name="vehicle_age" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const modelsByMake = {{ models_by_make | tojson | safe }};
+        const trimsByModel = {{ trims_by_model | tojson | safe }};
+
+        function updateModelDropdown() {
+            const make = $('#make').val();
+            const models = modelsByMake[make] || [];
+            $('#model').html(models.map(m => `<option value="${m}">${m}</option>`));
+            updateTrimDropdown();
+        }
+
+        function updateTrimDropdown() {
+            const model = $('#model').val();
+            const trims = trimsByModel[model] || [];
+            $('#trim').html(trims.map(t => `<option value="${t}">${t}</option>`));
+        }
+
+        $('#make').on('change', updateModelDropdown);
+        $('#model').on('change', updateTrimDropdown);
+
+        $(document).ready(updateModelDropdown);
+    </script>
+</body>
+</html>
