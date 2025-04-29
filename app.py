@@ -6,7 +6,7 @@ import util
 app = Flask(__name__)
 
 # Load model and metadata
-model = joblib.load("xgb_vehicle_price_model.pkl")
+model = joblib.load("vehicle_price_model.pkl")
 encoder = joblib.load("onehot_encoder.pkl")
 feature_names = joblib.load("feature_names.pkl")
 
