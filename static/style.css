@@ -7,7 +7,7 @@ body {
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* optional dark layer for readability */
+    background-color: rgba(0, 0, 0, 0.5);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -17,14 +17,16 @@ body {
 .card {
     background-color: #ffffff;
     border-radius: 16px;
-    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
     font-weight: 600;
-    text-align: center;
-    color: #333;
+    color: #343a40;
+}
+
+.display-5 {
+    font-size: 2.5rem;
 }
