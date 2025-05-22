@@ -77,3 +77,15 @@ The project includes a `Procfile` for deployment on Heroku. Ensure that all nece
 ## Project Demo
 
 ![Demo](readme_resources/demo.gif)
+
+## Author
+Frough Hurmath S
+**Hurmath123**  
+[GitHub Profile](https://github.com/Hurmath123)
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
