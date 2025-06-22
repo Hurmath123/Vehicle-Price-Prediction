@@ -63,7 +63,7 @@ The `ml vehicle.ipynb` notebook contains the steps for data preprocessing, model
 
 ##  Deployment
 
-The project includes a `Procfile` for deployment on Heroku. Ensure that all necessary files are committed, and follow Heroku's deployment guidelines.
+The project can be easily deployed on render.
 
 ##  Resources
 
